@@ -18,6 +18,7 @@ html {
 body {
   height: 100%;
   position: relative;
+  z-index: 1;
 }
 
 body.dark-elf {
@@ -31,14 +32,18 @@ body.dark-elf {
   font-size: 26px;
   line-height: 40px;
   position: relative;
-  &.top {
-    position: absolute;
-    top: -36px;
-  }
-  &.bottom {
-    position: absolute;
-    bottom: -36px;
-  }
+  text-align: justify;
+  z-index: 1;
+}
+
+.mysterious-text.top {
+  position: absolute;
+  top: 0;
+}
+
+.mysterious-text.bottom {
+  position: absolute;
+  bottom: 0;
 }
 
 .mysterious-text-overlay {
@@ -48,14 +53,18 @@ body.dark-elf {
   left: 0;
   right: 0;
   bottom: 0;
-  &.reverse {
-    background-image: linear-gradient( to top, transparent, $DE_bg);
-  }
+  z-index: 2;
+  overflow: hidden;
+}
+
+.mysterious-text.bottom .mysterious-text-overlay {
+  background-image: linear-gradient( to top, transparent, $DE_bg);
 }
 
 .tutorial-content {
   position: relative;
   top: 150px;
+  z-index: 3;
 }
 
 .container {

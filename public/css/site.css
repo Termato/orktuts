@@ -50,7 +50,8 @@ html {
 
 body {
   height: 100%;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
 
 body.dark-elf {
   background-color: #040921;
@@ -61,13 +62,17 @@ body.dark-elf {
   font-family: "Tengwar Annatar", serif;
   font-size: 26px;
   line-height: 40px;
-  position: relative; }
-  .mysterious-text.top {
-    position: absolute;
-    top: -36px; }
-  .mysterious-text.bottom {
-    position: absolute;
-    bottom: -36px; }
+  position: relative;
+  text-align: justify;
+  z-index: 1; }
+
+.mysterious-text.top {
+  position: absolute;
+  top: 0; }
+
+.mysterious-text.bottom {
+  position: absolute;
+  bottom: 0; }
 
 .mysterious-text-overlay {
   background-image: -webkit-linear-gradient(top, transparent, #040921);
@@ -76,14 +81,18 @@ body.dark-elf {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
-  .mysterious-text-overlay.reverse {
-    background-image: -webkit-linear-gradient(bottom, transparent, #040921);
-    background-image: linear-gradient(to top, transparent, #040921); }
+  bottom: 0;
+  z-index: 2;
+  overflow: hidden; }
+
+.mysterious-text.bottom .mysterious-text-overlay {
+  background-image: -webkit-linear-gradient(bottom, transparent, #040921);
+  background-image: linear-gradient(to top, transparent, #040921); }
 
 .tutorial-content {
   position: relative;
-  top: 150px; }
+  top: 150px;
+  z-index: 3; }
 
 .container {
   margin: auto;
