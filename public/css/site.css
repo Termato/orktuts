@@ -44,3 +44,47 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+body.dark-elf {
+  background-color: #040921;
+  color: #8D9EAF; }
+
+.mysterious-text {
+  color: #292E47;
+  font-family: "Tengwar Annatar", serif;
+  font-size: 26px;
+  line-height: 40px;
+  position: relative; }
+
+.mysterious-text-overlay {
+  background-image: -webkit-linear-gradient(top, transparent, #040921);
+  background-image: linear-gradient(to bottom, transparent, #040921);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+  .mysterious-text-overlay.reverse {
+    background-image: -webkit-linear-gradient(bottom, transparent, #040921);
+    background-image: linear-gradient(to top, transparent, #040921); }
+
+.container {
+  margin: auto;
+  max-width: 680px; }
+
+h1 {
+  text-align: center; }
+
+.dark-elf h1 {
+  color: #7F50B1;
+  font-family: "First Order", serif;
+  font-size: 60px;
+  line-height: 60px;
+  text-shadow: 0px 0px 10px rgba(152, 64, 255, 0.74); }
+
+.intro {
+  color: #8D9EAF;
+  font-family: 'Gentium Book Basic', serif;
+  font-size: 19px;
+  line-height: 36px;
+  margin-top: 80px; }

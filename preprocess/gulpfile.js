@@ -33,7 +33,7 @@ gulp.task('serve', ['sass'], function() {
     notify: false
   });
 
-  gulp.watch(['../public/*.php', '../public/**/*.php']).on('change', browserSync.reload);
+  gulp.watch(['../*.php', '../**/*.php', '../*.html', '../**/*.html']).on('change', browserSync.reload);
   gulp.watch(['sass/*.scss', 'sass/**/*.scss'], ['sass']);
   gulp.watch(['js/*.js','js/**/*.js'], ['scripts']);
 });

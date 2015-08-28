@@ -1,1 +1,62 @@
 @import 'reset';
+
+
+
+$DE_bg:   #040921;
+$DE_tx:   #8D9EAF;
+$DE_hd:   #7F50B1;
+$DE_glow: #9840FF;
+$DE_mystry_txt: #292E47;
+$DE_hd_font: 'First Order', serif;
+
+$font_ta: 'Tengwar Annatar', serif;
+
+body.dark-elf {
+  background-color: $DE_bg;
+  color: $DE_tx;
+}
+
+.mysterious-text {
+  color: $DE_mystry_txt;
+  font-family: $font_ta;
+  font-size: 26px;
+  line-height: 40px;
+  position: relative;
+}
+
+.mysterious-text-overlay {
+  background-image: linear-gradient( to bottom, transparent, $DE_bg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  &.reverse {
+    background-image: linear-gradient( to top, transparent, $DE_bg);
+  }
+}
+
+.container {
+  margin: auto;
+  max-width: 680px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.dark-elf h1 {
+  color: $DE_hd;
+  font-family: $DE_hd_font;
+  font-size: 60px;
+  line-height: 60px;
+  text-shadow: 0px 0px 10px rgba(152,64,255,0.74);
+}
+
+.intro {
+  color: $DE_tx;
+  font-family: 'Gentium Book Basic', serif;
+  font-size: 19px;
+  line-height: 36px;
+  margin-top: 80px;
+}
