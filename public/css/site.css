@@ -45,6 +45,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  position: relative; }
+
 body.dark-elf {
   background-color: #040921;
   color: #8D9EAF; }
@@ -55,6 +62,12 @@ body.dark-elf {
   font-size: 26px;
   line-height: 40px;
   position: relative; }
+  .mysterious-text.top {
+    position: absolute;
+    top: -36px; }
+  .mysterious-text.bottom {
+    position: absolute;
+    bottom: -36px; }
 
 .mysterious-text-overlay {
   background-image: -webkit-linear-gradient(top, transparent, #040921);
@@ -67,6 +80,10 @@ body.dark-elf {
   .mysterious-text-overlay.reverse {
     background-image: -webkit-linear-gradient(bottom, transparent, #040921);
     background-image: linear-gradient(to top, transparent, #040921); }
+
+.tutorial-content {
+  position: relative;
+  top: 150px; }
 
 .container {
   margin: auto;

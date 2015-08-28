@@ -11,6 +11,15 @@ $DE_hd_font: 'First Order', serif;
 
 $font_ta: 'Tengwar Annatar', serif;
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  position: relative;
+}
+
 body.dark-elf {
   background-color: $DE_bg;
   color: $DE_tx;
@@ -22,6 +31,14 @@ body.dark-elf {
   font-size: 26px;
   line-height: 40px;
   position: relative;
+  &.top {
+    position: absolute;
+    top: -36px;
+  }
+  &.bottom {
+    position: absolute;
+    bottom: -36px;
+  }
 }
 
 .mysterious-text-overlay {
@@ -34,6 +51,11 @@ body.dark-elf {
   &.reverse {
     background-image: linear-gradient( to top, transparent, $DE_bg);
   }
+}
+
+.tutorial-content {
+  position: relative;
+  top: 150px;
 }
 
 .container {
