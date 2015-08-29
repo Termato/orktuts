@@ -1,15 +1,23 @@
 @import 'reset';
 
+@font-face {
+  font-family: 'Firstttt';
+  src: url('../fonts/darkelf/first.eot?') format('eot'), url('../fonts/darkelf/first.woff') format('woff'), url('../fonts/darkelf/first.ttf') format('truetype');
+}
 
+@font-face {
+  font-family: 'Tengwarrrr';
+  src: url('../fonts/elvish/tengwar.eot?') format('eot'), url('../fonts/elvish/tengwar.woff') format('woff'), url('../fonts/elvish/tengwar.ttf') format('truetype');
+}
 
 $DE_bg:   #040921;
 $DE_tx:   #8D9EAF;
 $DE_hd:   #7F50B1;
 $DE_glow: #9840FF;
 $DE_mystry_txt: #292E47;
-$DE_hd_font: 'First Order', serif;
+$DE_hd_font: 'Firstttt', serif;
 
-$font_ta: 'Tengwar Annatar', serif;
+$font_ta: 'Tengwarrrr', serif;
 
 html {
   height: 100%;
@@ -32,8 +40,14 @@ body.dark-elf {
   font-size: 26px;
   line-height: 40px;
   position: relative;
+  overflow: hidden;
   text-align: justify;
+  width: 100%;
   z-index: 1;
+  @media (max-width: 420px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 
 .mysterious-text.top {
@@ -44,6 +58,12 @@ body.dark-elf {
 .mysterious-text.bottom {
   position: absolute;
   bottom: 0;
+}
+
+.mysterious-text p {
+  width: 2560px;
+  margin: auto;
+  overflow: hidden;
 }
 
 .mysterious-text-overlay {
@@ -69,7 +89,10 @@ body.dark-elf {
 
 .container {
   margin: auto;
-  max-width: 680px;
+  max-width: 620px;
+  @media (max-width: 700px) {
+    padding: 0 24px;
+  }
 }
 
 h1 {
@@ -81,7 +104,14 @@ h1 {
   font-family: $DE_hd_font;
   font-size: 60px;
   line-height: 60px;
-  text-shadow: 0px 0px 10px rgba(152,64,255,0.74);
+}
+
+.mysterious-heading {
+  color: #617385;
+  font-family: $font_ta;
+  font-size: 16px;
+  margin-top: 18px;
+  text-align: center;
 }
 
 .intro {
@@ -90,4 +120,164 @@ h1 {
   font-size: 19px;
   line-height: 36px;
   margin-top: 80px;
+  @media (max-width: 420px) {
+    font-size: 17px;
+    line-height: 30px;
+  }
 }
+
+.dark-elf .intro:first-letter {
+  box-shadow: 0 0 0 1px $DE_hd,
+              0 0 0 3px $DE_bg,
+              0 0 0 5px $DE_hd;
+  color: $DE_hd;
+  float: left;
+  font-family: $DE_hd_font;
+  font-size: 78px;
+  padding: 28px 25px;
+  margin-left: -40px;
+  margin-right: 23px;
+  @media (max-width: 700px) {
+    margin-left: -10px;
+  }
+  @media (max-width: 420px) {
+    font-size: 64px;
+    padding: 24px;
+  }
+}
+
+.tutorial-nav {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.button {
+  border-radius: 2px;
+  display: inline-block;
+  font-family: 'Gentium Book Basic', serif;
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 23px;
+  padding: 11px 36px;
+  text-decoration: none;
+}
+
+.dark-elf h1 {
+  animation-duration: 8000ms;
+  animation-iteration-count: infinite;
+  animation-name: glowing;
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 10px 0 100px $DE_glow,
+                 0 0 3px $DE_bg;
+  }
+  25% {
+    text-shadow: 0 0 50px $DE_glow,
+                 0 0 3px $DE_bg;
+  }
+  50% {
+    text-shadow: -10px 0 100px $DE_glow,
+                 0 0 3px $DE_bg;
+  }
+  75% {
+    text-shadow: 0 0 50px $DE_glow,
+                 0 0 3px $DE_bg;
+  }
+  100% {
+    text-shadow: 10px 0 100px $DE_glow,
+                 0 0 3px $DE_bg;
+  }
+}
+
+.dark-elf .button {
+  background: #293052;
+  color: #626892;
+  transition: background-color 200ms,
+              box-shadow       200ms,
+              color            200ms;
+  &:hover {
+    background-color: $DE_hd;
+    box-shadow: 0 0 50px 0 $DE_glow;
+    // border: 1px solid darken($DE_hd, 25%);
+    color: #fafafa;
+  }
+}
+
+.glowing-prophecies {
+  margin: auto;
+  max-width: 1000px;
+  position: relative;
+}
+
+.glowing-prophecy {
+  color: $DE_hd;
+  font-family: $DE_hd_font;
+  font-size: 26px;
+  position: absolute;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  // background-color: orange;
+}
+
+.glowing-prophecy {
+  &:nth-child(1) {
+    top: 50px;
+    left: 100px;
+    animation: outerhover 6000ms linear infinite;
+  }
+  &:nth-child(2) {
+    top: 200px;
+    left: 100px;
+    animation: outerhover 10000ms linear infinite;
+  }
+  &:nth-child(3) {
+    top: 80px;
+    left: 200px;
+    animation: outerhover 8000ms linear infinite;
+  }
+  &:nth-child(4) {
+    top: 30px;
+    right: 220px;
+    animation: outerhover 7000ms linear infinite;
+  }
+  &:nth-child(5) {
+    top: 40px;
+    left: 180px;
+    animation: outerhover 6500ms linear infinite;
+  }
+  &:nth-child(6) {
+    top: 50px;
+    right: 150px;
+    animation: outerhover 8700ms linear infinite;
+  }
+  &:nth-child(7) {
+    top: 100px;
+    right: 100px;
+    animation: outerhover 6200ms linear infinite;
+  }
+}
+
+.glowing-prophecy span {
+  box-shadow: 0 0 50px 7px $DE_hd;
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  text-shadow: 0 0 25px $DE_glow;
+  animation: innerhover 8000ms linear infinite;
+}
+
+@keyframes outerhover {
+  0% { transform:rotate(0deg) translateX(0px); }
+  50% { transform:rotate(180deg) translateX(20px); }
+  to { transform:rotate(360deg) translateX(0px); }
+}
+
+@keyframes innerhover {
+  from { transform:rotate(0deg); }
+  to { transform:rotate(-360deg); }
+}
+
